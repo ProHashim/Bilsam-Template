@@ -1,3 +1,5 @@
+
+
 #hero{
     position: relative;
     width:100%;
@@ -5,8 +7,10 @@
     height: 506px;
     
 
-    background: url(./images/hero-bg.png);
-    opacity: 0.6;
+    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+    url("./images/hero-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     .hero-container{
 
         .hero-title h1{
@@ -18,6 +22,7 @@
             /* identical to box height, or 135px */
 
             text-align: right;
+          
 
             color: #00BDC3;
 
@@ -25,7 +30,21 @@
             
         }
         .hero-content p{
+            font-family: DIN Next LT Arabic;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 36px;
+            line-height: 187.5%;
+            /* identical to box height, or 67px */
+
             text-align: right;
+            
+
+            /* Text Black */
+
+            color: #202020;
+
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
         }
         
@@ -36,40 +55,73 @@
     margin:  100px 0;
     .pics-container{
         width: 100%;
+        max-width: 1220px;
         display: flex;
         justify-content: center;
-        
+        div img{
+            max-width: 200px;
+        }
 
         .img3{
             position: relative;
             bottom: 20px;
-            .img3-logo{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
+            z-index: 2;
+            
+        }
+        .img1{
+            position: relative;
+            left: 30px;
+        }
+        .img2 {
+            position: relative;
+            left: 10px;
+        }
+        .img4 {
+            position: relative;
+            right: 10px;
+            z-index: 1;
+        }
+        .img5 {
+            position: relative;
+            right: 30px;
         }
     }
 }
 
 #third-section{
     display: flex;
+    gap: 100px;
     .child-section{
-        
+        position: relative;
+        min-height:400px;
+        .img img{
+            position: relative;
+            
+        }
+        .text{
+            
+            
+            h2,p{
+                text-align: center;
+            }
+        }
     }
 }
 
-#form-section{
+.form-container{
+    max-width: 992px;
+     margin: 0 auto;
+#form-section {
     position: relative;
     padding: 70px;
-    max-width: 992px;
     margin: 100px 0;
+    
     border: 2px solid #E5E5E5;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 26px;
-    h2{
-       
+
+    h2 {
+
 
         font-family: SST Arabic;
         font-style: normal;
@@ -81,47 +133,126 @@
         text-align: center;
 
         color: #231D4F;
+        margin:  50px 0;
 
     }
-    .steps{
-        
+
+    .steps {
+
         display: flex;
         justify-content: space-between;
         gap: 30px;
-        span::before{
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+
+        span::before {
             content: url(./images/tick.png);
         }
     }
 
-    .form{
-        form{
-            .form-row{
-                .form-group {
-                    border: 1px solid #ced4da;
-                    padding: 5px;
-                    border-radius: 6px;
-                    width: auto;
-                }
+    .form {
+        form {
+            text-align: right;
 
-                .form-group:focus {
-                    color: #212529;
-                    background-color: #fff;
-                    border-color: #86b7fe;
+            .row {
+                .submit-btn{
+                    width: 100%;
+                    max-width: 50%;
+                    margin: 0 auto;
+                    background-color: #00CDD4;
+                    border: 0;
                     outline: 0;
-                    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+                    border-radius:6px;
+                    color: #fff;
+                    min-height: 50px;
+                    margin-top: 50px;
+                }
+                .form-group {
+
+                    .form-ctrl {
+                        height: calc(1.5em + .75rem + 2px);
+                        // padding: .375rem .75rem;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        line-height: 1.5;
+                        color: #495057;
+                        background-color: #fff;
+                        background-clip: padding-box;
+                        border: 1px solid #ced4da;
+                        border-radius: .25rem;
+                        transition: border-color .15s ease-in-out,
+                            box-shadow .15s ease-in-out;
+                    }
+
                 }
 
-                .form-group input {
-                    display: inline-block;
-                    width: auto;
-                    border: none;
+                .form-g {
+                    padding: 0 15px;
+                    width: 35%;
                 }
-                
 
-                .form-group input:focus {
-                    box-shadow: none;
+                .form-gr {
+                    padding: 0 15px;
+                    width: 30%;
                 }
             }
         }
     }
+}
+}
+
+
+@media screen and (max-width: 600px) {
+    #third-section {
+        display: block;
+
+        .child-section {
+            
+
+            .img img {
+               display: block;
+               margin-left: auto;
+               margin-right: auto;
+
+
+            }
+
+            .text {
+
+
+                h2,
+                p {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .form-container{
+#form-section {
+    padding: 50px 15px;
+
+    .steps{
+        text-align: right;
+        display: block;
+        column-count: 2;
+    }
+    .form {
+        form {
+            .row{
+                .form-gr{
+                    width: 100%;
+                }
+                .form-g{
+                    width: 100%;
+
+                    .form-ctrl{
+                        width: calc(100% - 80px);
+                    }
+                }
+            }
+        }
+    }
+}
+    }
+    
 }
