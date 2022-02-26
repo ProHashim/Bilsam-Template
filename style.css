@@ -1,7 +1,13 @@
+body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 #hero {
   position: relative;
   width: 100%;
-  max-width: 1600px;
   height: 506px;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0.4))), url("./images/hero-bg.png");
   background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("./images/hero-bg.png");
@@ -187,7 +193,16 @@
   width: 30%;
 }
 
+@media screen and (min-width: 601px) {
+  #features-pic-carousel {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 600px) {
+  .pics-container {
+    display: none !important;
+  }
   #third-section {
     display: block;
   }
@@ -218,5 +233,52 @@
   .form-container #form-section .form form .row .form-g .form-ctrl {
     width: calc(100% - 80px);
   }
+}
+
+.slider .slide {
+  width: 100%;
+  max-width: 100px;
+}
+
+.slider .slide img {
+  max-width: 90px;
+  height: auto;
+}
+
+.slick-next,
+.slick-prev {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: transparent;
+  font-size: 1px;
+}
+
+.slick-next:focus,
+.slick-prev:focus {
+  outline: none;
+}
+
+.slick-next:before {
+  content: url(./images/Arrow-left.png);
+  color: green;
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.slick-prev:before {
+  content: url(./images/Arrow-right.png);
+  color: green;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 99;
 }
 /*# sourceMappingURL=style.css.map */

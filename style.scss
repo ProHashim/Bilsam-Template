@@ -1,9 +1,13 @@
-
+body{
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 #hero{
     position: relative;
     width:100%;
-    max-width: 1600px;
     height: 506px;
     
 
@@ -201,8 +205,17 @@
 }
 }
 
+@media screen and (min-width: 601px) {
+    #features-pic-carousel{
+        display: none;
+    }
+}
+
 
 @media screen and (max-width: 600px) {
+    .pics-container{
+        display: none!important;
+    }
     #third-section {
         display: block;
 
@@ -255,4 +268,52 @@
 }
     }
     
+}
+
+
+// Slider only
+.slider{
+    .slide{
+        width: 100%;
+        max-width: 100px;
+        img{
+            max-width: 90px;
+            height: auto;
+        }
+    }
+}
+.slick-next,
+.slick-prev {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: transparent;
+    font-size: 1px;
+}
+.slick-next:focus,
+.slick-prev:focus {
+    outline: none;
+}
+
+.slick-next:before {
+    content: url(./images/Arrow-left.png );
+    color: green;
+    font-size: 50px;
+    position:absolute;
+    top: 50%;
+    right: 10%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.slick-prev:before {
+    content: url(./images/Arrow-right.png);
+    color: green;
+    font-size: 20px;
+    position:absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
 }
